@@ -1,0 +1,25 @@
+services:
+  # Backend API Service
+  - type: web
+    name: healthassist-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python api.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: PORT
+        value: 5001
+    healthCheckPath: /health
+
+  # Frontend Service
+  - type: web
+    name: healthassist-frontend
+    env: static
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://healthassist-backend.onrender.com 
