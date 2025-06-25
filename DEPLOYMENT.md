@@ -17,11 +17,11 @@
    - **Environment**: `Python`
    - **Region**: Choose closest to you
    - **Branch**: `main`
-   - **Build Command**: `pip install -r requirements.txt`
+   - **Build Command**: `pip install -r requirements-simple.txt`
    - **Start Command**: `cd backend && python api.py`
 
 4. **Environment Variables**
-   - `PYTHON_VERSION`: `3.9.0`
+   - `PYTHON_VERSION`: `3.13.4`
    - `PORT`: `5001`
 
 5. **Click "Create Web Service"**
@@ -66,8 +66,9 @@
 
 1. **Build Fails on Backend**
    - Check logs for missing dependencies
-   - Ensure `requirements.txt` is in root directory
-   - Verify Python version is 3.9.0
+   - Ensure `requirements-simple.txt` is in root directory
+   - Verify Python version is 3.13.4
+   - If setuptools error occurs, try using `requirements-simple.txt`
 
 2. **Frontend Can't Connect to Backend**
    - Verify `REACT_APP_API_URL` environment variable
@@ -89,7 +90,7 @@
 
 ### Backend
 ```bash
-PYTHON_VERSION=3.9.0
+PYTHON_VERSION=3.13.4
 PORT=5001
 ```
 

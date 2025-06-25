@@ -4,11 +4,11 @@ services:
     name: healthassist-backend
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements-simple.txt
     startCommand: cd backend && python api.py
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.0
+        value: 3.13.4
       - key: PORT
         value: 5001
     healthCheckPath: /health
